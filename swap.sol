@@ -20,12 +20,12 @@ contract TokenSwap{
     function swapFromtoken1(uint _amount,address to)public{
         require(token1.allowance(to,address(this))>=_amount,"token1 allowance to low");
         _safeTransferFrom(token1,to,address(this),_amount);
-        token2.transfer(msg.sender,amount);
+        token2.transfer(msg.sender,＿amount);
     }
     function swapFromOPEX(uint _amount,address to)public{
         require(opex.allowance(token2,address(this))>=_amount,"token2 allowance to low");
         _safeTransferFrom(token2,to,address(this),_amount);
-        token1.transfer(msg.sender,amount);
+        token1.transfer(msg.sender,＿amount);
     }
     function _safeTransferFrom(ERC20 token,address sender,address recipient,uint amount)private{
         bool sent=token.transferFrom(sender,recipient,amount);
