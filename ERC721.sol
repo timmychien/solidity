@@ -1,6 +1,5 @@
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
-// METADATA 是每一個token 都有不同的metadata
 
 library SafeMath {
     /**
@@ -1173,7 +1172,7 @@ contract ERC721Full is ERC721Enumerable, ERC721Metadata {
 }
 
 
-contract BaypayItem is ERC721,ERC721Full, Ownable {
+contract Collections is ERC721,ERC721Full, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
     address public transferProxy;
